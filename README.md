@@ -1,7 +1,7 @@
 # 💻 Java Fundamentals - Estudos 
  
 ## 📝 Sobre o Repositório
-Este repositorio foi criado para documentar minha evolução prática e teórica no bootcamp "Java Fundamentals" da [DIO] (https://www.dio.me/).
+Este repositorio foi criado para documentar minha evolução prática e teórica no bootcamp "Java Fundamentals" da [DIO](https://www.dio.me/).
 
 Meu objetivo é construir uma base sólida em conhecimento do Back-End, focando em prática e resolução estruturada de problemas.
 
@@ -12,4 +12,4 @@ Meu objetivo é construir uma base sólida em conhecimento do Back-End, focando 
 
   ---
 
-  Feito por "[Henry Felix] (https://www.linkedin.com/in/henryfelixalves/)"
+  Feito por "[Henry Felix](https://www.linkedin.com/in/henryfelixalves/)"
