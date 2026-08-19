@@ -21,7 +21,6 @@ public class Main {
             
             switch (opcao) {
                 case 1:
-                    colocarPetNaMaquina();
                     meuPetshop.darBanho();
                     break;
 
@@ -40,6 +39,13 @@ public class Main {
                     Pet petCriado = colocarPetNaMaquina();
                     meuPetshop.colocarPet(petCriado);
                     break;
+                case 5:
+                    meuPetshop.tirarPet();
+                    break;
+                case 6:
+                    meuPetshop.limparMaquina();
+                    break;
+                
                 
                     
 

@@ -17,6 +17,6 @@ public class Pet {
     }
 
     public void setpetLimpo(boolean petLimpo) {
-        this.petLimpo = limpo;
+        this.petLimpo = petLimpo;
     }
 }

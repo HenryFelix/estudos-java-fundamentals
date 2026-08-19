@@ -1,3 +1,5 @@
+import java.lang.annotation.Retention;
+
 public class Petshop {
     private int nivelAgua;
     private int nivelShampoo;
@@ -26,28 +28,27 @@ public class Petshop {
             return;
         }
         this.pet.setpetLimpo(true);
-        this.petLimpo = true;
-        System.out.println("Banho concluido");
         this.nivelAgua -= 10;
         this.nivelShampoo -= 2;
+        System.out.println("Banho concluido");
     }
 
     public void abastecer(int valorAgua, int valorShamp) {
-        if (valorAgua > 2 || nivelShampoo > 2) {
+        if (valorAgua > 2 || valorShamp > 2) {
             System.out.println("Sao permitidos 2 litros por vez");
             return;
         }
-        if (this.nivelAgua + valorAgua >= 30 || this.nivelShampoo + valorShamp >= 10) {
+        if (this.nivelAgua + valorAgua > 30 || this.nivelShampoo + valorShamp > 10) {
             System.out.println("Nivel maximo de capacidade de agua ou shampoo");
             return;
         }
         this.nivelAgua += valorAgua;
         this.nivelShampoo += valorShamp;
-        System.out.println("Nivel da agua: " + nivelAgua + " | Nivle do shampoo: " + nivelShampoo);
+        Status();
     }
 
     public void Status () {
-        System.out.println("Nivel da agua: " + nivelAgua + " | Nivle do shampoo: " + nivelShampoo + " | Pets: " + petQuantidade);
+        System.out.println("Nivel da agua: " + nivelAgua + " | Nivl do shampoo: " + nivelShampoo + " | Pets: " + petQuantidade);
     }
 
     public void colocarPet (Pet novoPet) {
@@ -55,24 +56,29 @@ public class Petshop {
     } 
 
     public void tirarPet (){
-        if (this.petQuantidade == 0) {
+        if (this.pet == null) {
             System.out.println("Nao ha nenhum pet na maquina");
             return;
-        } else if (this.petLimpo == false) {
+        } 
+        if (this.pet.isPetLimpo() == false) {
             this.maquinaLimpa = false;
+            this.pet = null;
             System.out.println("O pet saiu sujo. Limpe a maquina.");
-            return;
-        }
+        } else {
         System.out.println("O pet " + this.pet.getName() + " esta limpo");
-        this.petQuantidade = 0;
-
+        }
+        this.pet = null;
     }
 
     public void limparMaquina() {
         if (this.maquinaLimpa == true) {
             System.out.println("A maquina ja esta limpa!");
             return;
-        }
+        }else if (this.nivelAgua < 3 || this.nivelShampoo < 1) {
+            System.out.println("Sem agua ou shampoo suficiente!");
+            Status();
+            return;
+            }
         this.nivelAgua -= 3;
         this.nivelShampoo -= 1;  
         this.maquinaLimpa = true;
