@@ -10,6 +10,10 @@ public class Carro {
     }
 
     public void ligar() {
+        if (this.marcha != 0) {
+            System.out.println("Coloque no neutro para ligar!");
+            return;
+        }
         this.ligado = true;
     }
 
@@ -31,14 +35,13 @@ public class Carro {
             if (this.marcha != 1 && this.velocidade == 0) {
                 this.ligado = false;
                 System.out.println("O carro morreu. Engate a primeira para sair. ");
-            } else if (this.velocidade < this.marcha * 20){
+            } else if (this.velocidade <= this.marcha * 20){
                 this.velocidade ++;
-            } else if (this.velocidade > this.marcha * 30 || this.velocidade > this.marcha * 12 ) {
-                this.velocidade = 0;
-                this.ligado = false;
-                System.out.println("O carro morreu. Voce acelerou com a marcha errada!"); 
-            } else {
-                System.out.println("Velocidade maxima para a " + this.marcha + " marcha atingida!");
+            } else if (this.velocidade > this.marcha * 20 && this.velocidade <= this.marcha * 20 + 10) {
+                this.velocidade ++;
+                System.out.println("Troque de marcha para aumentar velocidade"); 
+            } else  if (this.velocidade > marcha * 20 + 10) {
+                System.out.println("Velocidade maxima para a " + this.marcha + " marcha atingida! Troque de marcha!");
             }
         }
     }
@@ -57,9 +60,7 @@ public class Carro {
 
     public void trocarMarcha(int novaMarcha) {
         int diferenca = Math.abs (novaMarcha - this.marcha);
-        if (this.ligado == false) {
-            System.out.println("Ligue o carro");
-        } else if (novaMarcha > 6 || novaMarcha < 0) {
+        if (novaMarcha > 6 || novaMarcha < 0) {
             System.out.println("Marcha invalida");
         } else if (diferenca == 1) {
             this.marcha = novaMarcha;
