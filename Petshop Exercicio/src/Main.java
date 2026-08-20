@@ -1,11 +1,13 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
     private final static Scanner scanner = new Scanner (System.in);
     public static void main(String[] args) {
+        scanner.useDelimiter("\r?\n");
         Petshop meuPetshop = new Petshop();
-        int opcao;
+        int opcao = -1;
         do {
             System.out.println("\n ===MENU DA MAQUINA===");
             System.out.println("1 - Dar banho no pet");
@@ -17,6 +19,7 @@ public class Main {
             System.out.println("0 - Sair");
             System.out.println("\n ===================");
 
+            try {
             opcao = scanner.nextInt();
             
             switch (opcao) {
@@ -45,12 +48,12 @@ public class Main {
                 case 6:
                     meuPetshop.limparMaquina();
                     break;
-                
-                
-                    
-
-
             }
+            } catch (InputMismatchException e) {
+                System.out.println("Digite apenas números inteiros!");
+                scanner.next(); 
+                opcao = -1;
+            }  
         } while (opcao != 0);
         scanner.close();
 

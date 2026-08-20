@@ -1,5 +1,3 @@
-import java.lang.annotation.Retention;
-
 public class Petshop {
     private int nivelAgua;
     private int nivelShampoo;
@@ -9,8 +7,8 @@ public class Petshop {
     private Pet pet;
 
     public Petshop() {
-        this.nivelAgua = 0;
-        this.nivelShampoo = 0;
+        this.nivelAgua = 30;
+        this.nivelShampoo = 10;
         this.petQuantidade = 0;
         this.petLimpo = false;
         this.maquinaLimpa = true;
@@ -48,10 +46,19 @@ public class Petshop {
     }
 
     public void Status () {
-        System.out.println("Nivel da agua: " + nivelAgua + " | Nivl do shampoo: " + nivelShampoo + " | Pets: " + petQuantidade);
+        if (this.pet != null) {
+            petQuantidade = 1;
+        } else {
+            petQuantidade = 0;
+        }
+        System.out.println("Nivel da agua: " + nivelAgua + " | Nivl do shampoo: " + nivelShampoo + " | Pets: " + petQuantidade );
     }
 
     public void colocarPet (Pet novoPet) {
+        if (this.pet != null) {
+            System.out.println("Ha um pet na maquina. Nao foi possivel colocar pet");
+            return;
+        }
         this.pet = novoPet;
     } 
 
