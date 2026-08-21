@@ -6,9 +6,9 @@ Este repositorio foi criado para documentar minha evolução prática e teórica
 Meu objetivo é construir uma base sólida em conhecimento do Back-End, focando em prática e resolução estruturada de problemas.
 
 ## ⚒️ Tecnologias e Ferramentas
-- "Linguagem:" Java
-- "IDE:" Visual Studio Code
-- "Versionamento:" Git e GitHub
+- **Linguagem:** Java
+- **IDE:** Visual Studio Code
+- **Versionamento:** Git e GitHub
 
   ---
 
