@@ -41,7 +41,7 @@ public class Carro {
                 this.velocidade ++;
                 System.out.println("Troque de marcha para aumentar velocidade"); 
             } else  if (this.velocidade > marcha * 20 + 10) {
-                System.out.println("Velocidade maxima para a " + this.marcha + " marcha atingida! Troque de marcha!");
+                System.out.println("Vdelocidade maxima para a " + this.marcha + " marcha atingida! Troque de marcha!");
             }
         }
     }
